@@ -29,13 +29,13 @@ https://github.com/ehmatthes/pcc
 
 ### `Python` 文件
 * `alien_invasion.py`：此文件为主程序，包含了游戏主循环。若要开始，请直接运行该脚本即可启动游戏
-* `settings.py`：此文件用以定义飞船的类
-* `ship.py`：此脚本用以创建“飞船”的类
-* `bullet.py`：此脚本用以创建“子弹”的类
-* `alien.py`：此脚本用以创建“外星人”的类
+* `settings.py`：此文件用以存放游戏的各种设置，包括静态和动态属性
+* `ship.py`：此脚本创建“飞船”的类
+* `bullet.py`：此脚本创建“子弹”的类
+* `alien.py`：此脚本创建“外星人”的类
 * `game_stats.py`：此脚本用于跟踪游戏的统计学习
-* `button.py`：此脚本用以创建“按钮”的类
-* `scoreboard.py`：此脚本用以创建“积分板”的类，显示各种分数
+* `button.py`：此脚本创建“按钮”的类
+* `scoreboard.py`：此脚本创建“积分板”的类，以便在屏幕上显示各种数值
 * `ai_testFrame.py`：此文件是测试框架，用以测试一些类、方法和函数的特性，不参与游戏的运行。
 
 **备注：** 上述所有脚本都是可配置的
