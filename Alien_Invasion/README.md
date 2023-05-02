@@ -1,74 +1,56 @@
-# Robot Manipulator Control Example
-Copyright 2017-2019 The MathWorks, Inc.
+# 外星人入侵
+版权所有 python crash course
+
+作者埃里克·马瑟斯的GitHub主页：
+https://github.com/ehmatthes
+
+关于本书的代码：
+https://github.com/ehmatthes/pcc
 
 ------------------------------------------------------------------------------------------
 
-## About the Example
+## 项目描述
 
-This example uses the ROBOTIS OpenManipulator Chain robot to demonstrate the 
-design of manipulator algorithms using MATLAB and Simulink.
+此项目来自《Python编程：从入门到实践》一书中的项目实战：
 
-This submission depends on files from the following Git repository: https://github.com/ROBOTIS-GIT/open_manipulator. 
-The `startupExample` script will attempt to download them, but if there are 
-any errors there is a pre-imported model of the robot manipulator so you can 
-still run the examples.
+我们来开发一个游戏吧！我们将使用 Pygame，这是一组功能强大而有趣的模块，可用于管理图形、动画乃至声音，让你能够更轻松地开发复杂的游戏。通过使用 Pygame 来处理在屏幕上绘制图像等任务，你不用考虑众多烦琐而艰难的编码工作，而是将重点放在程序的高级逻辑上。
 
-Forward and inverse kinematics are demonstrated using functions available 
-within MATLAB as well as supervisory logic implemented in Stateflow.
+在本章中，你将安装 Pygame，再创建一艘能够根据用户输入而左右移动和射击的飞船。在接下来的两章中，你将创建一群作为射杀目标的外星人，并做其他的改进，如限制可供玩家使用的飞船数以及添加记分牌。
 
-Robot geometries are imported to MATLAB using the "importrobot" function
-and to Simscape Multibody using the "smimport" function. For more information
-on these functions check the associated documentation pages.
+从本章开始，你还将学习管理包含多个文件的项目。我们将重构很多代码，以提高代码的效率，并管理文件的内容，以确保项目组织有序。
+创建游戏是趣学语言的理想方式。看别人玩你编写的游戏让你很有满足感，而编写简单的游戏有助于你明白专业级游戏是怎么编写出来的。
 
-To learn more, refer to these videos:
-
-* [Designing Robot Manipulator Algorithms](https://www.mathworks.com/videos/matlab-and-simulink-robotics-arena-designing-robot-manipulator-algorithms-1515776491590.html)
-* [Controlling Robot Manipulator Joints](https://www.mathworks.com/videos/matlab-and-simulink-robotics-arena-controlling-robot-manipulator-joints-1521714030608.html)
+在项目“外星人入侵”（第 12~14 章）中，你将使用 Pygame 包来开发一款 2D 游戏，它在玩家每消灭一群向下移动的外星人后，都将玩家提高一个等级；而等级越高，游戏的节奏
+越快，难度越大。请动手输入并运行代码，以明白各个代码块对整个游戏所做的贡献，并尝试不同的值和设置，这样你将对如何改进游戏的交互性有更深入的认识。完成这个项目后，你将获得自己动手使用 Pygame 开发 2D 游戏所需的技能。
 
 ------------------------------------------------------------------------------------------
 
-## Main Example Files
+## 文件描述
 
-1. `openManipulatorIK.m`
-    
-    This file shows how to import a robot from a URDF description and use
-    the generated rigid body tree representation to implement forward and
-    inverse kinematics algorithms
+### `Python` 文件
+* `alien_invasion.py`：此文件为主程序，包含了游戏主循环。若要开始，请直接运行该脚本即可启动游戏
+* `settings.py`：此文件用以定义飞船的类
+* `ship.py`：此脚本用以创建“飞船”的类
+* `bullet.py`：此脚本用以创建“子弹”的类
+* `alien.py`：此脚本用以创建“外星人”的类
+* `game_stats.py`：此脚本用于跟踪游戏的统计学习
+* `button.py`：此脚本用以创建“按钮”的类
+* `scoreboard.py`：此脚本用以创建“积分板”的类，显示各种分数
+* `ai_testFrame.py`：此文件是测试框架，用以测试一些类、方法和函数的特性，不参与游戏的运行。
 
-2. `openManipulatorWaypointTracking.slx`
-    
-    This Simulink model uses Simscape Multibody as the environment and shows
-    how to integrate the forward and inverse kinematics algorithms into Simulink
-    to be used with Stateflow supervisory logic to pickup a ball, follow a
-    trajectory, and finally drop the ball.
+**备注：** 上述所有脚本都是可配置的
 
-3. `openManipulatorBallTracking.slx`
-
-    This Simulink model builds on the waypoint tracking model and adds simple
-    perception to track and catch a moving ball using a polynomial 
-    extrapolation of the ball trajectory.
-
-4. `openManipulatorTorqueCtrlCfg.slx`
-
-    This Simulink model tests the closed-loop torque controller, in configuration 
-    space, using joint position commands (no inverse kinematics or supervisory logic).
-
-5. `openManipulatorTorqueCtrlTask.slx`
-
-    This Simulink model tests the closed-loop torque controller, in task 
-    space, using end effector position commands (no supervisory logic).
+### `images` 文件夹
+包含了所要用到的飞船和外星舰队的图片
 
 ------------------------------------------------------------------------------------------
 
-## Product Requirements
+## 项目要求
 
-This submission was last updated and tested using MATLAB R2019b. 
+此提交最后使用 Pycharm2022.2.2 进行了更新和测试。
 
-The required toolboxes to run all examples are:
+所用解释器版本:
+* Python 3.8
 
-* MATLAB
-* Simulink
-* Robotics System Toolbox
-* Simscape
-* Simscape Multibody
-* Stateflow
+跨平台 Python 库:
+* Pygame 2.3.0
