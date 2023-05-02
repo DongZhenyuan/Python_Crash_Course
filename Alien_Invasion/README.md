@@ -49,8 +49,8 @@ https://github.com/ehmatthes/pcc
 
 此提交最后使用 Pycharm2022.2.2 进行了更新和测试。
 
-所用解释器版本:
+所用解释器版本：
 * Python 3.8
 
-跨平台 Python 库:
+跨平台 Python 库：
 * Pygame 2.3.0
